@@ -5,16 +5,14 @@ class Grupo:
 
     def __init__(self, grupo="grupo ordinado", asignaturas=None, estudiantes=None):
         self._grupo = grupo
-        self._asignaturas = asignaturas if asignaturas is not None else []
-        self.listadoAlumnos = estudiantes if estudiantes is not None else []
+        self._asignaturas = asignaturas 
+        self.listadoAlumnos = estudiantes 
 
     def listadoAsignaturas(self, **args):
         for x in args.values():
             self._asignaturas.append(Asignatura(x))
 
-    def agregarAlumno(self, alumno, lista=None):
-        if lista is None:
-            lista = []
+    def agregarAlumno(self, alumno, lista = None):
         lista.append(alumno)
         self.listadoAlumnos = self.listadoAlumnos + lista
 
